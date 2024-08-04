@@ -69,6 +69,7 @@ class SqueezeNet(nn.Module):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         # Images are assumed to be 224x224x3, WxHxC, and should return a tensor with 96 channels.
+
         self.conv1 = nn.Conv2d(
             in_channels=3,
             out_channels=96,
@@ -121,3 +122,44 @@ class SqueezeNet(nn.Module):
             expand1_dim=192,
             expand3_dim=192,
         )
+        self.fire8 = Fire(
+            in_dim=384,
+            squeeze1_dim=64,
+            expand1_dim=256,
+            expand3_dim=256,
+        )
+        self.maxpool8 = nn.MaxPool2d(kernel_size=3, stride=2)
+        self.fire9 = Fire(
+            in_dim=512,
+            squeeze1_dim=64,
+            expand1_dim=256,
+            expand3_dim=256,
+        )
+        self.conv10 = nn.Conv2d(
+            in_channels=512,
+            out_channels=1000,
+            kernel_size=1,
+        )
+        self.conv10_activation = nn.ReLU()
+        self.avgpool10 = nn.AvgPool2d(kernel_size=13, stride=1)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        """Define the computation performed at every call"""
+        return nn.Sequential(
+            self.conv1,
+            self.conv1_activation,
+            self.maxpool1,
+            self.fire2,
+            self.fire3,
+            self.fire14,
+            self.maxpool4,
+            self.fire5,
+            self.fire6,
+            self.fire7,
+            self.fire8,
+            self.maxpool8,
+            self.fire9,
+            self.conv10,
+            self.conv10_activation,
+            self.avgpool10,
+        )(x)

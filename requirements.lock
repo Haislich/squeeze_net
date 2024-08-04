@@ -10,40 +10,100 @@
 #   universal: false
 
 -e file:.
-alembic==1.13.2
-    # via dataset
-banal==1.0.6
-    # via dataset
-dataset==1.6.2
+aiohappyeyeballs==2.3.4
+    # via aiohttp
+aiohttp==3.10.0
+    # via datasets
+    # via fsspec
+aiosignal==1.3.1
+    # via aiohttp
+attrs==24.1.0
+    # via aiohttp
+certifi==2024.7.4
+    # via requests
+charset-normalizer==3.3.2
+    # via requests
+colorama==0.4.6
+    # via tqdm
+datasets==2.20.0
     # via squeeze-net
+dill==0.3.8
+    # via datasets
+    # via multiprocess
 filelock==3.15.4
+    # via datasets
+    # via huggingface-hub
     # via torch
-fsspec==2024.6.1
+frozenlist==1.4.1
+    # via aiohttp
+    # via aiosignal
+fsspec==2024.5.0
+    # via datasets
+    # via huggingface-hub
     # via torch
-greenlet==3.0.3
-    # via sqlalchemy
+huggingface-hub==0.24.5
+    # via datasets
+idna==3.7
+    # via requests
+    # via yarl
 jinja2==3.1.4
     # via torch
-mako==1.3.5
-    # via alembic
 markupsafe==2.1.5
     # via jinja2
-    # via mako
 mpmath==1.3.0
     # via sympy
+multidict==6.0.5
+    # via aiohttp
+    # via yarl
+multiprocess==0.70.16
+    # via datasets
 networkx==3.3
     # via torch
 numpy==1.26.4
+    # via datasets
+    # via pandas
+    # via pyarrow
     # via squeeze-net
+packaging==24.1
+    # via datasets
+    # via huggingface-hub
+pandas==2.2.2
+    # via datasets
+pillow==10.4.0
+    # via squeeze-net
+pyarrow==17.0.0
+    # via datasets
+pyarrow-hotfix==0.6
+    # via datasets
+python-dateutil==2.9.0.post0
+    # via pandas
+pytz==2024.1
+    # via pandas
+pyyaml==6.0.1
+    # via datasets
+    # via huggingface-hub
+requests==2.32.3
+    # via datasets
+    # via huggingface-hub
 setuptools==72.1.0
     # via torch
-sqlalchemy==1.4.53
-    # via alembic
-    # via dataset
+six==1.16.0
+    # via python-dateutil
 sympy==1.13.1
     # via torch
 torch==2.4.0
     # via squeeze-net
+tqdm==4.66.5
+    # via datasets
+    # via huggingface-hub
 typing-extensions==4.12.2
-    # via alembic
+    # via huggingface-hub
     # via torch
+tzdata==2024.1
+    # via pandas
+urllib3==2.2.2
+    # via requests
+xxhash==3.4.1
+    # via datasets
+yarl==1.9.4
+    # via aiohttp
