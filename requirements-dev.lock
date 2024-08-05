@@ -31,6 +31,7 @@ click==8.1.7
 colorama==0.4.6
     # via click
     # via pylint
+    # via pytest
     # via tqdm
 datasets==2.20.0
     # via squeeze-net
@@ -54,6 +55,8 @@ huggingface-hub==0.24.5
 idna==3.7
     # via requests
     # via yarl
+iniconfig==2.0.0
+    # via pytest
 isort==5.13.2
     # via pylint
 jinja2==3.1.4
@@ -80,24 +83,30 @@ numpy==1.26.4
     # via pandas
     # via pyarrow
     # via squeeze-net
+    # via torchvision
 packaging==24.1
     # via black
     # via datasets
     # via huggingface-hub
+    # via pytest
 pandas==2.2.2
     # via datasets
 pathspec==0.12.1
     # via black
 pillow==10.4.0
     # via squeeze-net
+    # via torchvision
 platformdirs==4.2.2
     # via black
     # via pylint
+pluggy==1.5.0
+    # via pytest
 pyarrow==17.0.0
     # via datasets
 pyarrow-hotfix==0.6
     # via datasets
 pylint==3.2.6
+pytest==8.3.2
 python-dateutil==2.9.0.post0
     # via pandas
 pytz==2024.1
@@ -117,6 +126,9 @@ sympy==1.13.1
 tomlkit==0.13.0
     # via pylint
 torch==2.4.0
+    # via squeeze-net
+    # via torchvision
+torchvision==0.19.0
     # via squeeze-net
 tqdm==4.66.5
     # via datasets
