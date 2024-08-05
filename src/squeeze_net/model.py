@@ -44,9 +44,10 @@ class Fire(nn.Module):
         self.expand1_activation = nn.ReLU()
 
         self.expand3 = nn.Conv2d(
-            in_channels=expand1_dim,
+            in_channels=squeeze1_dim,
             out_channels=expand3_dim,
             kernel_size=3,
+            padding=1,
         )
         self.expand3_activation = nn.ReLU()
 
@@ -141,7 +142,7 @@ class SqueezeNet(nn.Module):
             kernel_size=1,
         )
         self.conv10_activation = nn.ReLU()
-        self.avgpool10 = nn.AvgPool2d(kernel_size=13, stride=1)
+        self.avgpool10 = nn.AvgPool2d(kernel_size=3, stride=1)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """Define the computation performed at every call"""

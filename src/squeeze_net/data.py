@@ -21,6 +21,7 @@ class ImageNetDataLoader(DataLoader):
         [
             transforms.Resize(256),
             transforms.CenterCrop(224),
+            transforms.Normalize(0.5, 0.5, False),
         ]
     )
 
@@ -46,13 +47,3 @@ class ImageNetDataLoader(DataLoader):
             data["image"] = data["image"].repeat(3, 1, 1)
         data["image"] = self._preprocess_transform(data["image"].float())
         return data
-
-
-if __name__ == "__main__":
-    from squeeze_net.model import SqueezeNet
-
-    dataloader = ImageNetDataLoader(batch_size=2)
-    model = SqueezeNet()
-    for batch in dataloader:
-        print(batch["image"])
-        break
